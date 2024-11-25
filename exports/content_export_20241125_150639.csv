@@ -1,0 +1,774 @@
+Customer Name,Segment,Email,Content Type,Context,Content,Created,Last Modified
+Jamie Williams,Urban Dwellers,jamie.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.491935,2024-11-25 08:44:36.491935
+Dana Miller,Budget-conscious Shoppers,dana.miller@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.491935,2024-11-25 08:44:36.491935
+Casey Davis,Frequent Shoppers,casey.davis@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.491935,2024-11-25 08:44:36.491935
+Sam Brown,Frequent Shoppers,sam.brown@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.491935,2024-11-25 08:44:36.491935
+Chris Rodriguez,Budget-conscious Shoppers,chris.rodriguez@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.491935,2024-11-25 08:44:36.491935
+Morgan Garcia,Travel Lovers,morgan.garcia@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.491935,2024-11-25 08:44:36.491935
+Sam Miller,Frequent Shoppers,sam.miller@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.491935,2024-11-25 08:44:36.491935
+Dana Williams,Frequent Shoppers,dana.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.491935,2024-11-25 08:44:36.492936
+Casey Brown,Travel Lovers,casey.brown@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.492936,2024-11-25 08:44:36.492936
+Morgan Williams,Eco-conscious Buyers,morgan.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.492936,2024-11-25 08:44:36.492936
+Chris Davis,Tech Enthusiasts,chris.davis@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.492936,2024-11-25 08:44:36.492936
+Jamie Williams,Small Business Owners,jamie.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.492936,2024-11-25 08:44:36.492936
+Sam Miller,Budget-conscious Shoppers,sam.miller@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.492936,2024-11-25 08:44:36.492936
+Chris Williams,Small Business Owners,chris.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.492936,2024-11-25 08:44:36.492936
+Sam Brown,Urban Dwellers,sam.brown@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.492936,2024-11-25 08:44:36.492936
+Chris Smith,Eco-conscious Buyers,chris.smith@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.492936,2024-11-25 08:44:36.492936
+Jamie Miller,Small Business Owners,jamie.miller@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.492936,2024-11-25 08:44:36.492936
+Jamie Miller,Tech Enthusiasts,jamie.miller@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.492936,2024-11-25 08:44:36.492936
+Casey Garcia,Fitness Enthusiasts,casey.garcia@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.492936,2024-11-25 08:44:36.493924
+Alex Garcia,Tech Enthusiasts,alex.garcia@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.493924,2024-11-25 08:44:36.493924
+Alex Garcia,Small Business Owners,alex.garcia@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.493924,2024-11-25 08:44:36.493924
+Casey Williams,Eco-conscious Buyers,casey.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.493924,2024-11-25 08:44:36.493924
+Jordan Garcia,Fitness Enthusiasts,jordan.garcia@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.493924,2024-11-25 08:44:36.493924
+Casey Johnson,Fitness Enthusiasts,casey.johnson@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.493924,2024-11-25 08:44:36.493924
+Drew Jones,Small Business Owners,drew.jones@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.493924,2024-11-25 08:44:36.493924
+Casey Rodriguez,Fitness Enthusiasts,casey.rodriguez@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.493924,2024-11-25 08:44:36.493924
+Drew Williams,Urban Dwellers,drew.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.493924,2024-11-25 08:44:36.493924
+Sam Jones,Frequent Shoppers,sam.jones@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.494923,2024-11-25 08:44:36.494923
+Chris Jones,Small Business Owners,chris.jones@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.494923,2024-11-25 08:44:36.494923
+Morgan Miller,Tech Enthusiasts,morgan.miller@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.494923,2024-11-25 08:44:36.494923
+Morgan Martinez,Travel Lovers,morgan.martinez@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.494923,2024-11-25 08:44:36.494923
+Jamie Williams,Travel Lovers,jamie.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.494923,2024-11-25 08:44:36.494923
+Jordan Miller,Tech Enthusiasts,jordan.miller@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.494923,2024-11-25 08:44:36.494923
+Jordan Jones,Urban Dwellers,jordan.jones@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.494923,2024-11-25 08:44:36.494923
+Morgan Jones,Fitness Enthusiasts,morgan.jones@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.494923,2024-11-25 08:44:36.494923
+Casey Rodriguez,Fitness Enthusiasts,casey.rodriguez@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.494923,2024-11-25 08:44:36.494923
+Drew Davis,Eco-conscious Buyers,drew.davis@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.494923,2024-11-25 08:44:36.494923
+Drew Davis,Fitness Enthusiasts,drew.davis@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.494923,2024-11-25 08:44:36.494923
+Chris Jones,Eco-conscious Buyers,chris.jones@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.494923,2024-11-25 08:44:36.494923
+Jamie Garcia,Fitness Enthusiasts,jamie.garcia@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.494923,2024-11-25 08:44:36.494923
+Alex Johnson,Travel Lovers,alex.johnson@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.495922,2024-11-25 08:44:36.495922
+Morgan Williams,Travel Lovers,morgan.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.495922,2024-11-25 08:44:36.495922
+Jordan Miller,Fitness Enthusiasts,jordan.miller@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.495922,2024-11-25 08:44:36.495922
+Chris Rodriguez,Tech Enthusiasts,chris.rodriguez@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.495922,2024-11-25 08:44:36.495922
+Jamie Williams,Travel Lovers,jamie.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.495922,2024-11-25 08:44:36.495922
+Casey Johnson,Fitness Enthusiasts,casey.johnson@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.495922,2024-11-25 08:44:36.495922
+Jordan Brown,Fitness Enthusiasts,jordan.brown@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.495922,2024-11-25 08:44:36.495922
+Morgan Johnson,Fitness Enthusiasts,morgan.johnson@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.495922,2024-11-25 08:44:36.495922
+Sam Jones,Tech Enthusiasts,sam.jones@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.495922,2024-11-25 08:44:36.496922
+Alex Davis,Tech Enthusiasts,alex.davis@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.496922,2024-11-25 08:44:36.496922
+Drew Williams,Budget-conscious Shoppers,drew.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.496922,2024-11-25 08:44:36.496922
+Taylor Jones,Fitness Enthusiasts,taylor.jones@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.496922,2024-11-25 08:44:36.496922
+Chris Brown,Tech Enthusiasts,chris.brown@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.496922,2024-11-25 08:44:36.496922
+Chris Jones,Frequent Shoppers,chris.jones@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.497919,2024-11-25 08:44:36.497919
+Alex Jones,Tech Enthusiasts,alex.jones@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.497919,2024-11-25 08:44:36.497919
+Morgan Garcia,Fitness Enthusiasts,morgan.garcia@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.497919,2024-11-25 08:44:36.497919
+Drew Smith,Tech Enthusiasts,drew.smith@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.497919,2024-11-25 08:44:36.497919
+Chris Johnson,Fitness Enthusiasts,chris.johnson@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.497919,2024-11-25 08:44:36.497919
+Drew Miller,Tech Enthusiasts,drew.miller@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.509915,2024-11-25 08:44:36.519910
+Jamie Rodriguez,Tech Enthusiasts,jamie.rodriguez@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+",2024-11-25 08:44:36.519910,2024-11-25 08:44:36.519910
+Jamie Williams,Urban Dwellers,jamie.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Subject: Jamie, streamline your business with one click
+
+Hey Jamie,
+
+As a fellow urban dweller, I know how precious time is in our fast-paced world. That's why I'm excited to introduce you to Business Stack – the game-changing software that's about to revolutionize how you manage your business processes.
+
+Imagine automating your entire workflow with just a few clicks. No more juggling multiple apps or drowning in spreadsheets. Business Stack seamlessly integrates all your operations, from client management to invoicing, in one sleek platform.
+
+Here's what Business Stack can do for you:
+• Save up to 15 hours a week on administrative tasks
+• Increase productivity by 30% with smart automation
+• Reduce errors and improve client satisfaction
+
+The best part? It's designed with urban professionals like you in mind – intuitive, mobile-friendly, and always accessible, whether you're working from your favorite coffee shop or squeezing in some work during your commute.
+
+Ready to take your business efficiency to the next level? Click below to start your free 14-day trial of Business Stack. No credit card required.
+
+[Start Your Free Trial Now]
+
+Don't let manual processes hold you back any longer. Join the ranks of successful urban entrepreneurs who are already reaping the benefits of Business Stack.
+
+To your success,
+The Business Stack Team
+
+P.S. Act fast! The first 100 sign-ups get an exclusive urban professional productivity guide worth $99. Click now to claim yours!",2024-11-25 15:03:01.715474,2024-11-25 15:03:01.715474
+Dana Miller,Budget-conscious Shoppers,dana.miller@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Subject: Dana, Streamline Your Business Without Breaking the Bank!
+
+Hi Dana,
+
+As a savvy business owner, you know that time is money. But what if you could save both without spending a fortune?
+
+Introducing Business Stack – the affordable software solution that automates your processes and workflows, letting you focus on what really matters: growing your business.
+
+With Business Stack, you'll:
+• Cut operational costs by up to 30%
+• Reduce manual tasks by 50%
+• Boost productivity across your team
+
+The best part? It's designed with budget-conscious businesses like yours in mind. No fancy bells and whistles you don't need – just powerful, cost-effective automation.
+
+For a limited time, we're offering a 14-day free trial. No credit card required, no strings attached.
+
+Ready to work smarter, not harder? Click below to start your free trial now!
+
+[Start My Free Trial]
+
+Here's to your business success,
+The Business Stack Team
+
+P.S. Act fast! This offer ends in 48 hours. Don't miss out on streamlining your business the affordable way.",2024-11-25 15:03:01.715474,2024-11-25 15:03:01.715474
+Casey Davis,Frequent Shoppers,casey.davis@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Subject: Casey, streamline your business with our new automation tool!
+
+Hi Casey,
+
+As a frequent shopper, you know the value of efficiency. That's why I'm excited to introduce you to Business Stack, a game-changing software designed to automate your business processes and workflows.
+
+Imagine cutting your daily tasks in half and focusing on what really matters – growing your business. With Business Stack, you can:
+
+• Automate repetitive tasks
+• Streamline your workflow
+• Boost productivity
+• Save time and money
+
+We've seen businesses like yours increase efficiency by up to 40% using our software. Plus, as a valued customer, we're offering you an exclusive 20% discount on your first year's subscription.
+
+Ready to revolutionize your business operations? Click below to start your free 14-day trial:
+
+[Start Your Free Trial Now]
+
+Don't miss this opportunity to transform your business. Try Business Stack today!
+
+Best regards,
+The Business Stack Team
+
+P.S. Act fast! This exclusive offer ends in 48 hours.",2024-11-25 15:03:01.715474,2024-11-25 15:03:01.715474
+Sam Brown,Frequent Shoppers,sam.brown@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Subject: Sam, Streamline Your Business with One Click!
+
+Hi Sam,
+
+As a frequent shopper, you know the value of efficiency. Imagine applying that same streamlined approach to your business processes. Introducing Business Stack – the all-in-one solution that automates your workflows with the same ease as your one-click purchases.
+
+Business Stack is designed for busy professionals like you who appreciate time-saving tools. With just a few clicks, you can:
+
+• Automate repetitive tasks
+• Integrate all your business apps
+• Track projects in real-time
+• Boost team productivity
+
+Our customers report saving an average of 15 hours per week. That's time you could spend growing your business or enjoying life outside work.
+
+Ready to revolutionize your business operations? Click here to start your free 30-day trial of Business Stack. No credit card required.
+
+Don't let manual processes hold you back any longer. Embrace automation and watch your business thrive!
+
+Best regards,
+The Business Stack Team
+
+P.S. Act now and get a 20% discount on your first year's subscription!",2024-11-25 15:03:01.716473,2024-11-25 15:03:01.716473
+Chris Rodriguez,Budget-conscious Shoppers,chris.rodriguez@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Subject: Chris, Streamline Your Business Without Breaking the Bank
+
+Hi Chris,
+
+Running a business on a tight budget can be challenging, but what if I told you there's a way to boost your efficiency without emptying your wallet?
+
+Introducing Business Stack, the affordable software solution that automates your business processes and workflows. Here's why it's perfect for budget-conscious business owners like you:
+
+1. Save time and money: Automate repetitive tasks and focus on what really matters.
+2. Easy to use: No tech expertise required – get started in minutes.
+3. Flexible pricing: Pay only for what you need, with plans starting at just $9.99/month.
+4. 30-day free trial: Test it out risk-free and see the results for yourself.
+
+Don't let a tight budget hold your business back. Try Business Stack today and watch your productivity soar!
+
+Click here to start your free 30-day trial: [Insert Link]
+
+Best regards,
+The Business Stack Team
+
+P.S. Act now and get an exclusive 20% off your first three months when you sign up for an annual plan!",2024-11-25 15:03:01.716473,2024-11-25 15:03:01.716473
+Morgan Garcia,Travel Lovers,morgan.garcia@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,Error generating content: Connection error.,2024-11-25 15:03:01.716473,2024-11-25 15:03:01.716473
+Sam Miller,Frequent Shoppers,sam.miller@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,Error generating content: Connection error.,2024-11-25 15:03:01.716473,2024-11-25 15:03:01.716473
+Dana Williams,Frequent Shoppers,dana.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,Error generating content: Connection error.,2024-11-25 15:03:01.716473,2024-11-25 15:03:01.716473
+Casey Brown,Travel Lovers,casey.brown@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Error generating content: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}}",2024-11-25 15:03:01.716473,2024-11-25 15:03:01.716473
+Morgan Williams,Eco-conscious Buyers,morgan.williams@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Subject: Morgan, Streamline Your Business Sustainably with Business Stack
+
+Hi Morgan,
+
+As someone who values both efficiency and environmental responsibility, I thought you'd be interested in a game-changing software that's making waves in the business world.
+
+Introducing Business Stack – the eco-friendly solution to automate your business processes and workflows. Here's why it's perfect for you:
+
+1. Paperless operations: Reduce your carbon footprint by digitizing all your workflows.
+2. Energy-efficient: Our cloud-based system uses less energy than traditional on-premise solutions.
+3. Time-saving: Automate repetitive tasks, giving you more time to focus on sustainable initiatives.
+4. Remote-work friendly: Minimize commute-related emissions by enabling seamless remote collaboration.
+
+By streamlining your operations with Business Stack, you're not just boosting productivity – you're contributing to a greener future.
+
+Ready to make your business more efficient and eco-friendly? Click here to start your free 30-day trial of Business Stack.
+
+Let's build a sustainable future for your business, together.
+
+Best regards,
+The Business Stack Team
+
+P.S. For every new sign-up, we'll plant a tree in your name. Make a difference today!",2024-11-25 15:03:01.716473,2024-11-25 15:03:01.716473
+Chris Davis,Tech Enthusiasts,chris.davis@example.com,email,New software called Business stack to help businesses easily automate their processes and workflows,"Subject: Chris, Revolutionize Your Business with Cutting-Edge Automation
+
+Hey Chris,
+
+As a fellow tech enthusiast, I know you're always on the lookout for the next big innovation. Well, get ready to be blown away!
+
+Introducing Business Stack – the game-changing software that's about to transform how you run your business. Imagine seamlessly automating all your processes and workflows with just a few clicks. It's like having a digital Swiss Army knife for your operations!
+
+Here's why you'll love Business Stack:
+
+1. Intuitive interface that speaks your tech-savvy language
+2. Customizable automation for every aspect of your business
+3. Real-time analytics to fuel your data-driven decisions
+4. Seamless integration with your existing tech ecosystem
+
+But don't just take my word for it. Experience the power of Business Stack yourself with our exclusive 14-day free trial.
+
+Ready to catapult your business into the future? Click here to start your free trial now!
+
+Trust me, Chris, once you see Business Stack in action, you'll wonder how you ever managed without it.
+
+Let's revolutionize your business together!
+
+Best,
+[Your Name]
+
+P.S. Act fast! The first 100 sign-ups get an additional month free. Don't miss out on this limited-time offer!",2024-11-25 15:03:01.716473,2024-11-25 15:03:01.716473

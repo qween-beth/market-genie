@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="text-center">
+    <h1 class="text-4xl font-bold text-gray-900 mb-8">Welcome to MarketGenie</h1>
+    <p class="text-xl text-gray-600 mb-8">Generate personalized marketing content at scale</p>
+    
+    {% if current_user.is_authenticated %}
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Recent Generations</h2>
+            {% if recent_contents %}
+                <div class="bg-white shadow rounded-lg divide-y">
+                    {% for content in recent_contents %}
+                        <div class="p-4">
+                            <h3 class="font-medium text-gray-900">{{ content.customer_name }}</h3>
+                            <p class="text-gray-500">{{ content.content_type | title }}</p>
+                            <p class="mt-2 text-gray-600">{{ content.text[:200] }}...</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="text-gray-600">No recent content generations</p>
+            {% endif %}
+        </div>
+    {% else %}
+        <a href="{{ url_for('login') }}" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700">
+            Get Started
+        </a>
+    {% endif %}
+</div>
+{% endblock %}

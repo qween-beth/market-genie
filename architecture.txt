@@ -1,0 +1,12 @@
+marketgenie/
+├── app.py
+├── templates/
+│   ├── base.html
+│   ├── home.html
+│   ├── upload.html
+│   ├── results.html
+│   ├── signup.html
+│   ├── login.html
+│   ├── edit_content.html
+└── static/
+    └── style.css

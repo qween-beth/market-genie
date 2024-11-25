@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Results{% endblock %}
+{% block content %}
+<div class="space-y-6">
+    <div class="flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-gray-900">Generated Content</h1>
+        <a href="{{ url_for('export_csv') }}" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
+            Export CSV
+        </a>
+    </div>
+    
+    {% if contents.items %}
+        <div class="bg-white shadow rounded-lg divide-y">
+            {% for content in contents.items %}
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h2 class="text-xl font-semibold text-gray-900">{{ content.customer_name }}</h2>
+                            <p class="text-gray-500">{{ content.segment }} | {{ content.content_type | title }}</p>
+                        </div>
+                        <a href="{{ url_for('edit_content', content_id=content.id) }}" 
+                           class="text-indigo-600 hover:text-indigo-700">Edit</a>
+                    </div>
+                    <div class="prose max-w-none">
+                        {{ content.text | safe }}
+                    </div>
+                    <div class="mt-4 text-sm text-gray-500">
+                        Created: {{ content.created_at.strftime('%Y-%m-%d %H:%M:%S') }}
+                        {% if content.last_modified != content.created_at %}
+                            | Modified: {{ content.last_modified.strftime('%Y-%m-%d %H:%M:%S') }}
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
+        {% if contents.pages > 1 %}
+            <div class="flex justify-center space-x-2">
+                {% for page_num in contents.iter_pages() %}
+                    {% if page_num %}
+                        <a href="{{ url_for('results', page=page_num) }}"
+                           class="px-3 py-2 rounded-md {% if page_num == contents.page %}bg-indigo-600 text-white{% else %}text-gray-700 hover:bg-gray-100{% endif %}">
+                            {{ page_num }}
+                        </a>
+                    {% else %}
+                        <span class="px-3 py-2">...</span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% else %}
+        <p class="text-center text-gray-600">No content generated yet</p>
+    {% endif %}
+</div>
+{% endblock %}
