@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="grid md:grid-cols-2 gap-8">
+    <div>
+        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl xl:text-6xl mb-6">
+            Scale Your Marketing Content
+        </h1>
+        <p class="mt-4 text-xl text-gray-500 mb-8">
+            Effortlessly generate personalized, high-converting marketing materials with AI-powered precision.
+        </p>
+        
+        {% if not current_user.is_authenticated %}
+            <div class="flex space-x-4">
+                <a href="{{ url_for('register') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white gradient-bg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300">
+                    Get Started
+                </a>
+                <a href="{{ url_for('login') }}" class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300">
+                    Login
+                </a>
+            </div>
+        {% endif %}
+    </div>
+    
+    <div>
+        {% if current_user.is_authenticated %}
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Recent Generations</h2>
+            {% if recent_contents %}
+                <div class="space-y-4">
+                    {% for content in recent_contents %}
+                        <div class="bg-white p-4 rounded-lg shadow-md card-hover">
+                            <h3 class="font-medium text-gray-900">{{ content.customer_name }}</h3>
+                            <p class="text-gray-500">{{ content.content_type | title }}</p>
+                            <p class="mt-2 text-gray-600">{{ content.text[:200] }}...</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <p class="text-gray-600">No recent content generations</p>
+                    <a href="{{ url_for('upload') }}" class="mt-4 inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
+                        Generate Content
+                    </a>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+
+
+<div class="mt-12">
+    <div class="text-center mb-8">
+        <h2 class="text-3xl font-extrabold text-gray-900">Your Marketing Toolkit</h2>
+        <p class="mt-4 text-xl text-gray-500">Quick access to powerful marketing tools</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+            <div class="text-4xl mb-4 text-indigo-600">🚀</div>
+            <h3 class="text-xl font-semibold mb-2">Content Generation</h3>
+            <p class="text-gray-500">Create targeted marketing copy instantly</p>
+            <a href="{{ url_for('upload') }}" class="mt-4 block text-indigo-600 hover:text-indigo-800">Start Generating</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+            <div class="text-4xl mb-4 text-indigo-600">📊</div>
+            <h3 class="text-xl font-semibold mb-2">Workstream</h3>
+            <p class="text-gray-500">Manage and track your content projects</p>
+            <a href="{{ url_for('list_segments') }}" class="mt-4 block text-indigo-600 hover:text-indigo-800">View Workstream</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+            <div class="text-4xl mb-4 text-indigo-600">🎯</div>
+            <h3 class="text-xl font-semibold mb-2">Analytics</h3>
+            <p class="text-gray-500">Optimize your marketing strategy</p>
+            <a href="#" class="mt-4 block text-indigo-600 hover:text-indigo-800">View Reports</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base2.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="text-center">
+    <h1 class="text-4xl font-bold text-gray-900 mb-8">Welcome to MarketGenie</h1>
+    <p class="text-xl text-gray-600 mb-8">Generate intelligent marketing content for your audience segments</p>
+    
+    {% if current_user.is_authenticated %}
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Recent Content</h2>
+            {% if recent_contents %}
+                <div class="space-y-4">
+                    {% for content in recent_contents %}
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="text-lg font-medium text-gray-900">{{ content.customer_name or 'Unknown Customer' }}</h3>
+                            <p class="text-sm text-gray-500">{{ content.segment or 'Uncategorized' }} - {{ content.content_type }}</p>
+                            <p class="mt-2 text-gray-600">{{ content.text[:200] if content.text else 'No content available.' }}...</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="text-gray-600">No content generated yet. Start by uploading customer data!</p>
+            {% endif %}
+        </div>
+    {% else %}
+        <a href="{{ url_for('signup') }}" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-indigo-700">
+            Get Started
+        </a>
+    {% endif %}
+</div>
+{% endblock %}
+
+<nav>
+    <ul class="navbar-nav mx-auto">
+        {% if current_user.is_authenticated %}
+            <li class="nav-item">
+                <a class="ud-menu-scroll" href="{{ url_for('upload') }}">Generate Content</a>
+            </li>
+            <li class="nav-item">
+                <a class="ud-menu-scroll" href="{{ url_for('list_segments') }}">Workstream</a>
+            </li>
+            <li class="nav-item">
+                <a class="ud-menu-scroll" href="{{ url_for('logout') }}">Logout</a>
+            </li>
+        {% else %}
+            <div class="navbar-btn d-none d-sm-inline-block">
+                <a href="{{ url_for('login') }}" class="ud-main-btn ud-login-btn">
+                    Sign In
+                </a>
+                <a href="{{ url_for('register') }}" class="ud-main-btn ud-white-btn">
+                    Sign Up
+                </a>
+            </div>
+        {% endif %}
+    </ul>
+</nav>

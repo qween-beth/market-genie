@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Generate Content{% endblock %}
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <h1 class="text-3xl font-bold text-gray-900 mb-8">Generate Marketing Content</h1>
+    
+    <form method="POST" enctype="multipart/form-data" class="bg-white shadow-md rounded-lg p-6 space-y-6">
+        <div>
+            <label for="content_type" class="block text-sm font-medium text-gray-700 mb-2">Content Type</label>
+            <select name="content_type" id="content_type" class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                <option value="email">Email</option>
+                <option value="social_post">Social Media Post</option>
+                <option value="blog_post">Blog Post</option>
+                <option value="video_script">Video Script</option>
+                <option value="ad_copy">Ad Copy</option>
+            </select>
+        </div>
+        
+        <div>
+            <label for="context" class="block text-sm font-medium text-gray-700 mb-2">Context (optional)</label>
+            <input type="text" name="context" id="context" placeholder="E.g., A new cream product launch" 
+                   class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+        </div>
+        
+        <div>
+            <label for="model_provider" class="block text-sm font-medium text-gray-700 mb-2">AI Provider</label>
+            <select name="model_provider" id="model_provider" class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                <option value="openai">OpenAI</option>
+                <option value="groq">Groq</option>
+                <option value="claude">Claude</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="file" class="block text-sm font-medium text-gray-700 mb-2">Upload CSV File</label>
+            <input type="file" name="file" id="file" accept=".csv" 
+                   class="w-full text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
+        </div>
+        
+        <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700">
+            Generate Content
+        </button>
+    </form>
+</div>
+{% endblock %}

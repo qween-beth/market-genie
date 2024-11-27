@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Segment Details | MarketGenie</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-800">{{ segment.name }} Segment</h1>
+                <p class="text-gray-600">{{ users|length }} contacts</p>
+            </div>
+            <div class="flex space-x-4">
+                <button onclick="openContentModal()" 
+                        class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded">
+                    Generate Content
+                </button>
+                <a href="{{ url_for('list_segments') }}" 
+                   class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded">
+                    Back to Segments
+                </a>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Contacts Section -->
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Contacts</h2>
+                {% if users %}
+                    <div class="space-y-2">
+                        {% for user in users %}
+                        <div class="flex justify-between items-center border-b pb-2">
+                            <div>
+                                <p class="font-medium">{{ user.name }}</p>
+                                <p class="text-sm text-gray-500">{{ user.email }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="text-gray-500">No contacts in this segment</p>
+                {% endif %}
+            </div>
+
+            <!-- Generated Content Section -->
+            <div class="bg-white shadow-md rounded-lg p-6 md:col-span-2">
+                <h2 class="text-xl font-semibold mb-4">Generated Content</h2>
+                {% if contents %}
+                    <div class="space-y-4">
+                        {% for content in contents %}
+                        <div class="bg-gray-50 p-4 rounded">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-600">
+                                    {{ content.content_type | upper }} | 
+                                    {{ content.created_at.strftime('%Y-%m-%d %H:%M') }}
+                                </span>
+                                <span class="text-sm text-gray-500">
+                                    {{ content.model_provider | upper }} Model
+                                </span>
+                            </div>
+                            <p class="text-gray-800">{{ content.text[:300] }}...</p>
+                            <div class="mt-2 flex space-x-2">
+
+                                <a href="{{ url_for('view_content', content_id=content.id) }}" class="text-blue-500 hover:underline">
+                                    <button class="text-blue-500 hover:underline">
+                                        View Full Content
+                                    </button>
+                                </a>
+
+                                <a href="{{ url_for('edit_content', content_id=content.id) }}" class="text-blue-500 hover:underline">
+                                    <button class="text-blue-500 hover:underline">
+                                        Edit
+                                    </button>
+                                </a>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="text-gray-500">No content generated for this segment</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Generation Modal (same as in segments.html) -->
+    <div id="contentModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 w-96">
+            <h2 class="text-xl font-semibold mb-4">Generate Marketing Content</h2>
+            <form action="{{ url_for('generate_segment_content_route', segment_id=segment.id) }}" method="POST" class="space-y-4">
+                <div>
+                    <label class="block mb-2">Content Type</label>
+                    <select name="content_type" class="w-full border rounded px-3 py-2">
+                        <option value="email">Email</option>
+                        <option value="social_post">Social Media Post</option>
+                        <option value="blog_post">Blog Post</option>
+                        <option value="ad_copy">Ad Copy</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block mb-2">Campaign Context (Optional)</label>
+                    <textarea name="context" class="w-full border rounded px-3 py-2" rows="3"></textarea>
+                </div>
+                <div>
+                    <label class="block mb-2">AI Model</label>
+                    <select name="model_provider" class="w-full border rounded px-3 py-2">
+                        <option value="openai">OpenAI</option>
+                        <option value="claude">Claude</option>
+                        <option value="groq">Groq</option>
+                    </select>
+                </div>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" onclick="closeContentModal()" 
+                            class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded">
+                        Cancel
+                    </button>
+                    <button type="submit" 
+                            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                        Generate Content
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openContentModal() {
+            document.getElementById('contentModal').classList.remove('hidden');
+            document.getElementById('contentModal').classList.add('flex');
+        }
+
+        function closeContentModal() {
+            document.getElementById('contentModal').classList.remove('flex');
+            document.getElementById('contentModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

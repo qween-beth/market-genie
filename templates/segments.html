@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Segments | MarketGenie</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">Marketing Segments</h1>
+            <div class="flex space-x-4">
+                <a href="{{ url_for('upload') }}" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                    Import Segments
+                </a>
+            </div>
+        </div>
+
+        {% if segments %}
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {% for segment in segments %}
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-semibold text-gray-800">{{ segment.name }}</h2>
+                        <span class="text-sm text-gray-500">
+                            {{ segment.members.count() }} contacts
+                        </span>
+                    </div>
+                    <div class="mt-4 flex space-x-2">
+                        <a href="{{ url_for('view_segment', segment_id=segment.id) }}" 
+                           class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded">
+                            View Details
+                        </a>
+                        <button onclick="openContentModal('{{ segment.id }}')" 
+                                class="bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 rounded">
+                            Generate Content
+                        </button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="bg-white shadow-md rounded-lg p-8 text-center">
+                <p class="text-gray-600 mb-4">No segments found. Import your first segment!</p>
+                <a href="{{ url_for('upload') }}" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded">
+                    Import Segments
+                </a>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Content Generation Modal -->
+    <div id="contentModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 w-96">
+            <h2 class="text-xl font-semibold mb-4">Generate Marketing Content</h2>
+            <form id="contentGenerationForm" method="POST" class="space-y-4">
+                <input type="hidden" id="segmentId" name="segment_id">
+                <div>
+                    <label class="block mb-2">Content Type</label>
+                    <select name="content_type" class="w-full border rounded px-3 py-2">
+                        <option value="email">Email</option>
+                        <option value="social_post">Social Media Post</option>
+                        <option value="blog_post">Blog Post</option>
+                        <option value="ad_copy">Ad Copy</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block mb-2">Campaign Context (Optional)</label>
+                    <textarea name="context" class="w-full border rounded px-3 py-2" rows="3"></textarea>
+                </div>
+                <div>
+                    <label class="block mb-2">AI Model</label>
+                    <select name="model_provider" class="w-full border rounded px-3 py-2">
+                        <option value="openai">OpenAI</option>
+                        <option value="claude">Claude</option>
+                        <option value="groq">Groq</option>
+                    </select>
+                </div>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" onclick="closeContentModal()" 
+                            class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded">
+                        Cancel
+                    </button>
+                    <button type="submit" 
+                            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                        Generate Content
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openContentModal(segmentId) {
+            document.getElementById('segmentId').value = segmentId;
+            document.getElementById('contentModal').classList.remove('hidden');
+            document.getElementById('contentModal').classList.add('flex');
+            document.getElementById('contentGenerationForm').action = `/generate_segment_content/${segmentId}`;
+        }
+
+        function closeContentModal() {
+            document.getElementById('contentModal').classList.remove('flex');
+            document.getElementById('contentModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

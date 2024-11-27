@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Content | MarketGenie</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+        <form action="{{ url_for('edit_content', content_id=content.id) }}" method="POST" class="bg-white shadow-md rounded-lg p-8">
+            <h1 class="text-2xl font-bold mb-6 text-gray-800">Edit Content</h1>
+            
+            <div class="mb-4">
+                <label class="block mb-2 text-gray-700">Segment</label>
+                <input type="text" value="{{ content.related_segment.name }}" disabled 
+                       class="w-full border rounded px-3 py-2 bg-gray-100">
+            </div>
+
+            <div class="mb-4">
+                <label class="block mb-2 text-gray-700">Content Type</label>
+                <input type="text" value="{{ content.content_type | title }}" disabled 
+                       class="w-full border rounded px-3 py-2 bg-gray-100">
+            </div>
+
+            <div class="mb-4">
+                <label class="block mb-2 text-gray-700">Campaign Context (Optional)</label>
+                <textarea name="context" rows="3" 
+                          class="w-full border rounded px-3 py-2">{{ content.context or '' }}</textarea>
+            </div>
+
+            <div class="mb-6">
+                <label class="block mb-2 text-gray-700">Content</label>
+                <textarea name="content_text" rows="10" 
+                          class="w-full border rounded px-3 py-2">{{ content.text }}</textarea>
+            </div>
+
+            <div class="flex justify-between">
+                <a href="{{ url_for('view_content', content_id=content.id) }}" 
+                   class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded">
+                    Cancel
+                </a>
+                <button type="submit" 
+                        class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                    Save Changes
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

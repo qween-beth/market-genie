@@ -11,55 +11,115 @@ import os
 from werkzeug.utils import secure_filename
 import tempfile
 
-
-
-
 app = Flask(__name__)
 
 
 app.secret_key = os.environ.get('SECRET_KEY', 'dev_key')  # Change in production
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///marketgenie.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///marketgenie2.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # Login Manager Setup
-login_manager = LoginManager(app)
+login_manager = LoginManager()
+login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 # OpenAI API Setup
 openai.api_key = os.environ.get('OPENAI_API_KEY')
 
+
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(150), nullable=False, unique=True)
-    email = db.Column(db.String(150), nullable=False, unique=True)
+    username = db.Column(db.String(150), nullable=False, unique=True, index=True)
+    email = db.Column(db.String(150), nullable=False, unique=True, index=True)
     password = db.Column(db.String(150), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    contents = db.relationship('GeneratedContent', backref='author', lazy=True)
+    contents = db.relationship('SegmentContent', backref='author', lazy=True)
 
-class GeneratedContent(db.Model):
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "username": self.username,
+            "email": self.email,
+            "created_at": self.created_at
+        }
+
+class Segment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    customer_name = db.Column(db.String(150), nullable=False)
-    segment = db.Column(db.String(150))
-    email = db.Column(db.String(150))
+    name = db.Column(db.String(100), nullable=False, unique=True, index=True)
+    description = db.Column(db.String(255))
+    members = db.relationship('SegmentMember', backref='segment', lazy='dynamic', cascade="all, delete-orphan")
+    contents = db.relationship('SegmentContent', backref='related_segment', lazy='dynamic', cascade="all, delete-orphan")
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "description": self.description
+        }
+
+class SegmentMember(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(150), nullable=False)
+    email = db.Column(db.String(150), nullable=False, index=True)
+    segment_id = db.Column(
+        db.Integer,
+        db.ForeignKey('segment.id', ondelete='CASCADE'),
+        nullable=False,
+        index=True
+    )
+    added_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "email": self.email,
+            "segment_id": self.segment_id,
+            "added_at": self.added_at
+        }
+
+class SegmentContent(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    segment_id = db.Column(
+        db.Integer,
+        db.ForeignKey('segment.id', ondelete='CASCADE'),
+        nullable=False,
+        index=True
+    )
+    user_id = db.Column(
+        db.Integer,
+        db.ForeignKey('user.id', ondelete='CASCADE'),
+        nullable=False,
+        index=True
+    )
     content_type = db.Column(db.String(50), nullable=False)
-    context = db.Column(db.String(500))  # New field for storing context
+    context = db.Column(db.String(500))
     text = db.Column(db.Text)
+    model_provider = db.Column(db.String(50), default='openai')
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     last_modified = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "segment_id": self.segment_id,
+            "user_id": self.user_id,
+            "content_type": self.content_type,
+            "context": self.context,
+            "text": self.text,
+            "model_provider": self.model_provider,
+            "created_at": self.created_at,
+            "last_modified": self.last_modified
+        }
 
-def generate_marketing_content(segment, first_name, content_type, context=None, model_provider='openai'):
+
+def generate_segment_content(segment_name, content_type, context=None, model_provider='openai'):
     """
-    Generate personalized content using the specified AI provider (OpenAI, Groq, or Claude).
-    Includes detailed prompts tailored for various content types.
+    Generate content for an entire segment with a single, segment-specific generation.
+    Supports multiple model providers like OpenAI, Groq, and Claude.
     """
-    # Base context combining customer info and optional context
-    base_context = f"You are an expert marketing copywriter creating content for {first_name} who belongs to the {segment} segment."
+    base_context = f"You are an expert marketing copywriter creating content for the {segment_name} segment."
     if context:
         base_context += f" The specific context/campaign is: {context}."
 
@@ -86,17 +146,16 @@ def generate_marketing_content(segment, first_name, content_type, context=None, 
             "specifics": "Include: Headline, main copy, and strong call-to-action. Focus on benefits and urgency."
         }
     }
-
     content_config = prompts.get(content_type, {
-        "prompt": f"{base_context} Write engaging marketing content.",
-        "specifics": "Ensure the content is engaging and relevant to the audience."
+        "prompt": f"{base_context} Write engaging marketing content for this segment.",
+        "specifics": "Ensure the content is targeted and relevant to the segment's profile."
     })
 
     final_prompt = f"{content_config['prompt']}\n\nSpecific Requirements:\n{content_config['specifics']}"
 
     try:
         if model_provider == 'openai':
-            response = openai.chat.completions.create(
+            response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[{"role": "system", "content": final_prompt}],
                 max_tokens=350,
@@ -109,11 +168,7 @@ def generate_marketing_content(segment, first_name, content_type, context=None, 
             response = client.chat.completions.create(
                 model="mixtral-8x7b-32768",
                 messages=[{"role": "system", "content": final_prompt}],
-                max_tokens=350,
-                temperature=0.7,
-                top_p=1.0,
-                frequency_penalty=0.2,
-                presence_penalty=0.0
+                max_tokens=350
             )
             return response.choices[0].message.content.strip()
 
@@ -121,21 +176,11 @@ def generate_marketing_content(segment, first_name, content_type, context=None, 
             anthropic_api_key = os.getenv('ANTHROPIC_API_KEY')
             if not anthropic_api_key:
                 raise ValueError("Anthropic API key not found in environment variables.")
-            
-            # Initialize the Anthropic client
             client = Anthropic(api_key=anthropic_api_key)
-            
-            # Create a message using the Messages API
             response = client.messages.create(
                 model="claude-3-5-sonnet-20240620",
                 max_tokens=350,
-                temperature=0.7,
-                messages=[
-                    {
-                        "role": "user",
-                        "content": final_prompt
-                    }
-                ]
+                messages=[{"role": "user", "content": final_prompt}]
             )
             return response.content[0].text.strip()
 
@@ -145,169 +190,203 @@ def generate_marketing_content(segment, first_name, content_type, context=None, 
     except Exception as e:
         return f"Error generating content: {str(e)}"
 
-def process_file(file_path, user_id, content_type, context, model_provider):
+def process_segment_file(file_path, user_id):
+    """
+    Process an uploaded CSV file and add segments and members to the database.
+    """
     try:
-        # Read the CSV file
         df = pd.read_csv(file_path)
-        required_columns = ['Customer Name', 'Segment', 'Email']
-
+        required_columns = ['Segment', 'Name', 'Email']
         if not all(col in df.columns for col in required_columns):
-            raise ValueError('CSV must contain Customer Name, Segment, and Email columns')
+            raise ValueError('CSV must contain Segment, Name, and Email columns.')
 
-        # Group users by segment
         segment_groups = df.groupby('Segment')
-        contents_created = 0
+        for segment_name, segment_df in segment_groups:
+            segment = Segment.query.filter_by(name=segment_name).first()
+            if not segment:
+                segment = Segment(name=segment_name)
+                db.session.add(segment)
+                db.session.flush()
 
-        # Generate content for each segment
-        for segment, segment_df in segment_groups:
-            # Take the first name from the first user in the segment for prompt personalization
-            first_name = segment_df['Customer Name'].iloc[0].split()[0]
-
-            # Generate segment-specific content
-            segment_content_text = generate_marketing_content(
-                segment,
-                first_name,
-                content_type,
-                context,
-                model_provider=model_provider
-            )
-
-            # Create content entries for each user in the segment
             for _, row in segment_df.iterrows():
-                # Personalize the content with individual user's name
-                personalized_content = segment_content_text.replace(
-                    first_name, 
-                    row['Customer Name'].split()[0]
-                )
-
-                content = GeneratedContent(
-                    user_id=user_id,
-                    customer_name=row['Customer Name'],
-                    segment=segment,
+                existing_member = SegmentMember.query.filter_by(
+                    name=row['Name'],
                     email=row['Email'],
-                    content_type=content_type,
-                    context=context,
-                    text=personalized_content
-                )
-                db.session.add(content)
-                contents_created += 1
+                    segment_id=segment.id
+                ).first()
+                if not existing_member:
+                    member = SegmentMember(
+                        name=row['Name'],
+                        email=row['Email'],
+                        segment_id=segment.id
+                    )
+                    db.session.add(member)
 
         db.session.commit()
-        return f'Successfully generated {contents_created} pieces of content across {len(segment_groups)} segments!'
+        return 'Segments and members successfully imported!'
+
     except Exception as e:
+        db.session.rollback()
         return f'Error processing file: {str(e)}'
 
-    
+
+
 
 @app.route('/')
 def home():
     if current_user.is_authenticated:
-        recent_contents = GeneratedContent.query.filter_by(user_id=current_user.id)\
-            .order_by(GeneratedContent.created_at.desc())\
+        recent_contents = SegmentContent.query.filter_by(user_id=current_user.id)\
+            .order_by(SegmentContent.created_at.desc())\
             .limit(5).all()
-        return render_template('home.html', recent_contents=recent_contents)
+    
     return render_template('home.html')
 
-        
+@app.route('/dashboard')
+@login_required  # Ensure the user is logged in
+def dashboard():
+    # Fetch recent contents authored by the current user
+    recent_contents = SegmentContent.query.filter_by(user_id=current_user.id)\
+        .order_by(SegmentContent.created_at.desc())\
+        .limit(5).all()
 
-@app.route('/upload', methods=['GET', 'POST'])
+    return render_template('dashboard.html', recent_contents=recent_contents)
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/segments')
 @login_required
-def upload():
+def list_segments():
+    segments = Segment.query.all()
+    return render_template('segments.html', segments=segments)
+
+@app.route('/segment/<int:segment_id>')
+@login_required
+def view_segment(segment_id):
+    segment = Segment.query.get_or_404(segment_id)
+    users = segment.members.all()
+    contents = segment.contents.order_by(SegmentContent.created_at.desc()).all()
+    return render_template('segment_detail.html', segment=segment, users=users, contents=contents)
+
+@app.route('/generate_segment_content/<int:segment_id>', methods=['POST'])
+@login_required
+def generate_segment_content_route(segment_id):
+    segment = Segment.query.get_or_404(segment_id)
+    content_type = request.form.get('content_type', 'email')
+    context = request.form.get('context', '').strip()
+    model_provider = request.form.get('model_provider', 'openai')
+
+    content_text = generate_segment_content(
+        segment.name,
+        content_type,
+        context,
+        model_provider
+    )
+
+    segment_content = SegmentContent(
+        segment_id=segment.id,
+        user_id=current_user.id,
+        content_type=content_type,
+        context=context,
+        text=content_text,
+        model_provider=model_provider
+    )
+    db.session.add(segment_content)
+    db.session.commit()
+
+    flash(f'Content generated for {segment.name} segment.', 'success')
+    return redirect(url_for('view_segment', segment_id=segment.id))
+
+@app.route('/content/<int:content_id>/view', methods=['GET'])
+@login_required
+def view_content(content_id):
+    content = SegmentContent.query.get_or_404(content_id)
+    
+    # Ensure the user can only view their own content
+    if content.user_id != current_user.id:
+        flash('You are not authorized to view this content.', 'error')
+        return redirect(url_for('results'))
+    
+    return render_template('content_view.html', content=content)
+
+@app.route('/content/<int:content_id>/edit', methods=['GET', 'POST'])
+@login_required
+def edit_content(content_id):
+    content = SegmentContent.query.get_or_404(content_id)
+    
+    # Ensure the user can only edit their own content
+    if content.user_id != current_user.id:
+        flash('You are not authorized to edit this content.', 'error')
+        return redirect(url_for('results'))
+    
     if request.method == 'POST':
-        if 'file' not in request.files:
-            flash('No file uploaded', 'error')
-            return redirect(request.url)
-
-        file = request.files['file']
-        content_type = request.form.get('content_type', 'email')
-        context = request.form.get('context', '').strip()  # Get context from form
-        model_provider = request.form.get('model_provider', 'openai')  # Default to OpenAI
-
-        if file.filename == '':
-            flash('No file selected', 'error')
-            return redirect(request.url)
-
-        # Validate file extension
-        if not file.filename.lower().endswith('.csv'):
-            flash('Only CSV files are allowed', 'error')
-            return redirect(request.url)
-
+        # Update the content
+        content.text = request.form.get('content_text')
+        content.context = request.form.get('context', '')
+        
         try:
-            # Save the file temporarily for processing
-            file_path = os.path.join(tempfile.gettempdir(), secure_filename(file.filename))
-            file.save(file_path)
-
-            # Process file asynchronously
-            result = process_file(file_path, current_user.id, content_type, context, model_provider)
-            flash(result, 'success')
-            return redirect(url_for('results'))
-
-
+            db.session.commit()
+            flash('Content updated successfully.', 'success')
+            return redirect(url_for('view_segment', segment_id=content.segment_id))
         except Exception as e:
-            flash(f'Error processing file: {str(e)}', 'error')
-            return redirect(request.url)
+            db.session.rollback()
+            flash(f'Error updating content: {str(e)}', 'error')
+    
+    return render_template('content_edit.html', content=content)
 
-    return render_template('upload.html')
-
-
+@app.route('/content/<int:content_id>/delete', methods=['POST'])
+@login_required
+def delete_content(content_id):
+    content = SegmentContent.query.get_or_404(content_id)
+    
+    # Ensure the user can only delete their own content
+    if content.user_id != current_user.id:
+        flash('You are not authorized to delete this content.', 'error')
+        return redirect(url_for('results'))
+    
+    try:
+        db.session.delete(content)
+        db.session.commit()
+        flash('Content deleted successfully.', 'success')
+        return redirect(url_for('view_segment', segment_id=content.segment_id))
+    except Exception as e:
+        db.session.rollback()
+        flash(f'Error deleting content: {str(e)}', 'error')
+        return redirect(url_for('view_segment', segment_id=content.segment_id))
+    
+    
 @app.route('/results')
 @login_required
 def results():
     page = max(1, request.args.get('page', 1, type=int))
     per_page = max(1, min(request.args.get('per_page', 10, type=int), 100))  # Limit max items per page to 100
 
-    contents = GeneratedContent.query.filter_by(user_id=current_user.id) \
-        .order_by(GeneratedContent.created_at.desc()) \
+    contents = SegmentContent.query.filter_by(user_id=current_user.id) \
+        .order_by(SegmentContent.created_at.desc()) \
         .paginate(page=page, per_page=per_page)
 
     return render_template('results.html', contents=contents)
 
-
-@app.route('/edit_content/<int:content_id>', methods=['GET', 'POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 @login_required
-def edit_content(content_id):
-    content = GeneratedContent.query.get_or_404(content_id)
-
-    if content.user_id != current_user.id:
-        flash('Unauthorized access', 'error')
-        return redirect(url_for('results'))
-
+def upload():
     if request.method == 'POST':
-        content.text = request.form['content_text']
-        content.last_modified = datetime.utcnow()
-        db.session.commit()
-        flash('Content updated successfully!', 'success')
-        return redirect(url_for('results'))
+        file = request.files['file']
+        if file:
+            file_path = secure_filename(file.filename)
+            file.save(file_path)
+            result = process_segment_file(file_path, current_user.id)
+            os.remove(file_path)  # Clean up
+            flash(result, 'success')
+            return redirect(url_for('list_segments'))
 
-    return render_template('edit_content.html', content=content)
+    return render_template('upload.html')
 
-@app.route('/export_csv')
-@login_required
-def export_csv():
-    try:
-        data = GeneratedContent.query.filter_by(user_id=current_user.id).all()
-        df = pd.DataFrame([{
-            'Customer Name': item.customer_name,
-            'Segment': item.segment,
-            'Email': item.email,
-            'Content Type': item.content_type,
-            'Context': item.context,  # Include context in export
-            'Content': item.text,
-            'Created': item.created_at,
-            'Last Modified': item.last_modified
-        } for item in data])
-
-        export_dir = 'exports'
-        if not os.path.exists(export_dir):
-            os.makedirs(export_dir)
-
-        filename = f'content_export_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv'
-        filepath = os.path.join(export_dir, filename)
-        df.to_csv(filepath, index=False)
-        return send_file(filepath, as_attachment=True, download_name=filename)
-    except Exception as e:
-        flash(f'Error exporting CSV: {str(e)}', 'error')
-        return redirect(url_for('results'))
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
