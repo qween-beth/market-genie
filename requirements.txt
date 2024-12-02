@@ -3,3 +3,4 @@ flask-login
 flask-sqlalchemy
 pandas
 fpdf
+gunicorn
