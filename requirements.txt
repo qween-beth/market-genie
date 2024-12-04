@@ -5,3 +5,5 @@ pandas
 fpdf
 openai
 gunicorn
+anthropic
+groq
